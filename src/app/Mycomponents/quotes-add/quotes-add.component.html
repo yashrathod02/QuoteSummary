@@ -1,0 +1,27 @@
+<div class="conatiner my 3">
+    <h4>Add a Quote</h4>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="qno">Quote Number</label>
+        <input type="number" [(ngModel)]="qno" class="form-control" id="qno" name="qno" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted"></small>
+      </div>
+        <div class="form-group">
+          <label for="customer_name">customer name</label>
+          <input type="text" [(ngModel)]="customer_name" class="form-control" id="customer_name" name="customer_name" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+          <label for="order_desc">Order Description</label>
+          <input type="text" class="form-control" id="order_desc" [(ngModel)]="order_desc" name="order_desc">
+        </div>
+        <div class="form-group">
+          <label for="price">Order Price</label>
+          <input type="number" class="form-control" id="price" [(ngModel)]="price" name="price">
+        </div>
+       
+        <button type="submit" class="btn btn-sm btn-primary">Add Quote</button>
+      </form>
+    
+    </div>
+    

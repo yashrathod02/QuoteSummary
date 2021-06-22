@@ -1,0 +1,17 @@
+<div class="float-container">
+
+    <div id="left">
+        <app-quotes-add (quoteAdd) = "addquote($event)" ></app-quotes-add>
+    </div>
+    <div id="right">
+        <h4>Quotes</h4>
+            <div *ngIf="this.quotes.length==0; else elseBlock">No Quotes to display</div>
+                <ng-template #elseBlock>
+            <div *ngFor="let quote of quotes">
+                <app-quotes-dis [quote] = "quote" (quotedelete)="deletequote($event)" (quotecheckbox) = "togglequote($event)">
+
+                </app-quotes-dis>
+            </div>
+                </ng-template>
+    </div>
+</div>

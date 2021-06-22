@@ -1,0 +1,13 @@
+<div class="my-3">
+    <h5 [ngClass]="{'strike': !quote.status}">{{quote.qno}}</h5>
+        <p [ngClass]="{'strike': !quote.status}">{{quote.customer_name}}  {{quote.order_desc}}    {{quote.price}}</p>
+        <p *ngIf="this.quote.status==true ;  else elseBlock"> Order status: Completed</p>
+        <ng-template #elseBlock>
+          <p>Order status: Pending</p>
+        </ng-template>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" (click) ="oncheckboxClick(quote)" [checked]="!quote.status">
+            <label class="form-check-label" for="exampleCheck1"></label>Mark check box to toggle Order Status.
+          </div>
+        <button class ="btn btn-sm btn-danger" (click)="onclick(quote)">Delete</button>
+    </div>
